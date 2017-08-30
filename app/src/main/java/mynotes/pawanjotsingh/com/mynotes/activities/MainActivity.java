@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     RecyclerAdapter recyclerAdapter;
 
 
-
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
