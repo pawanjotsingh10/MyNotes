@@ -15,11 +15,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import mynotes.pawanjotsingh.com.mynotes.R;
+import mynotes.pawanjotsingh.com.mynotes.activities.MainActivity;
 import mynotes.pawanjotsingh.com.mynotes.activities.NoteDetailsActivity;
 import mynotes.pawanjotsingh.com.mynotes.dbhelper.DataBaseHelper;
 import mynotes.pawanjotsingh.com.mynotes.models.NoteModel;
@@ -114,7 +116,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
                 // this ensures that the correct card gets clicked and not any other
                 getPosition = holder.getAdapterPosition();
                 // this method runs when a specific card is clicked
-                showNote(noteModelList.get(holder.getAdapterPosition()));
+                showNote(noteModelList.get(getPosition));
             }
         });
 
@@ -145,6 +147,36 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
                                 intentShare.putExtra(Intent.EXTRA_TEXT,titleAndContent);
 
                                 context.startActivity(intentShare);
+                                break;
+
+                            case R.id.idMenuAddShortCutToHomeScreen:
+
+                                //code to add a shortcut to homeScreen for a specific note
+                                //Intent to go the NoteDetailsActivity
+                                Intent intentShortCut=new Intent(context,NoteDetailsActivity.class);
+                                //Ensures that no duplicate instances gets created
+                                intentShortCut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                intentShortCut.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                                //Passing the values in order to set them at in NoteDetailsActivity
+                                intentShortCut.putExtra("id", noteModel.getId());
+                                intentShortCut.putExtra("text_title", noteModel.getTitle());
+                                intentShortCut.putExtra("text_content", noteModel.getContent());
+                                intentShortCut.putExtra("text_tag", noteModel.getTag());
+                                intentShortCut.putExtra("color", noteModel.getColor());
+
+                                //Intent to create a shortcut at home
+                                Intent intent=new Intent();
+                                intent.putExtra("duplicate",false);
+                                intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,Intent.ShortcutIconResource.fromContext(context,R.mipmap.ic_launcher_round));
+                                intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT,intentShortCut);
+                                intent.putExtra(Intent.EXTRA_SHORTCUT_NAME,noteModel.getTitle());
+                                intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+                                context.sendBroadcast(intent);
+
+                                Toast.makeText(context, "Shortcut created successfully", Toast.LENGTH_SHORT).show();
+                                context.startActivity(intentShortCut);
+                                
                                 break;
 
                             // code to delete a particular note

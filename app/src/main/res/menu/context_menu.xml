@@ -4,6 +4,10 @@
     <item android:id="@+id/idMenuShare"
         android:title="@string/share"
         android:actionProviderClass="android.widget.ShareActionProvider"/>
+
+    <item android:id="@+id/idMenuAddShortCutToHomeScreen"
+        android:title="Add to home screen"/>
+
     <item  android:id="@+id/idMenuDelete"
         android:title="@string/detete"/>
 
