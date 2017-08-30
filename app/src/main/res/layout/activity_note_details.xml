@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mynotes.pawanjotsingh.com.mynotes.activities.NoteDetailsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorToolBar"
+        android:id="@+id/idToolbarNoteDetails"
+        android:padding="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/colors"
+        android:textStyle="italic"
+        android:visibility="invisible"
+        android:id="@+id/idTextViewColors"
+        android:layout_below="@+id/idToolbarNoteDetails"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+    <CheckedTextView
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:id="@+id/idCheckedTextViewRed"
+        android:visibility="invisible"
+        android:layout_margin="10dp"
+        android:checkMark="@mipmap/ic_done_black_24dp"
+        android:layout_below="@+id/idToolbarNoteDetails"
+        android:layout_toEndOf="@+id/idTextViewColors"
+        android:background="@drawable/textview_circle_red" />
+
+    <CheckedTextView
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:visibility="invisible"
+        android:id="@+id/idCheckTextViewBlue"
+        android:layout_margin="10dp"
+        android:checkMark="@mipmap/ic_done_black_24dp"
+        android:layout_below="@id/idToolbarNoteDetails"
+        android:layout_toEndOf="@+id/idCheckedTextViewRed"
+        android:background="@drawable/textview_circle_blue"/>
+
+    <CheckedTextView
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:id="@+id/idCheckedTextViewGreen"
+        android:visibility="invisible"
+        android:layout_margin="10dp"
+        android:checkMark="@mipmap/ic_done_black_24dp"
+        android:layout_below="@id/idToolbarNoteDetails"
+        android:layout_toEndOf="@+id/idCheckTextViewBlue"
+        android:background="@drawable/textview_circle_green"/>
+
+    <CheckedTextView
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:id="@+id/idCheckedTextViewWhite"
+        android:visibility="invisible"
+        android:layout_margin="10dp"
+        android:checkMark="@mipmap/ic_done_black_24dp"
+        android:layout_below="@id/idToolbarNoteDetails"
+        android:layout_toEndOf="@id/idCheckedTextViewGreen"
+        android:background="@drawable/textview_circle_white"/>
+
+    <CheckedTextView
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:id="@+id/idCheckedTextViewYellow"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        android:checkMark="@mipmap/ic_done_black_24dp"
+        android:layout_toEndOf="@+id/idCheckedTextViewWhite"
+        android:layout_below="@id/idToolbarNoteDetails"
+        android:background="@drawable/textview_circle_yellow"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idTextViewColors"
+        android:layout_margin="10dp"
+        android:inputType="textShortMessage"
+        android:background="@android:color/transparent"
+        android:textSize="40sp"
+        android:hint="@string/title"
+        android:textStyle="bold"
+        android:id="@+id/idEditTextTitle"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_below="@+id/idEditTextTitle"
+        android:hint="@string/content"
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:gravity="top|start"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:background="@android:color/transparent"
+        android:id="@+id/idEditTextContent"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:id="@+id/idEditTextTag"
+        android:layout_height="35dp"
+        android:hint="@string/tag"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_margin="10dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/idFloatingActionButtonEdit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        android:layout_margin="20dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/idFloatingActionButtonSave"
+        android:layout_above="@+id/idFloatingActionButtonEdit"
+        android:layout_margin="20dp"
+        android:visibility="invisible"
+        app:srcCompat="@android:drawable/ic_menu_save"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

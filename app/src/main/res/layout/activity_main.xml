@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context="mynotes.pawanjotsingh.com.mynotes.activities.MainActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idToolbarMain"
+        android:padding="10dp"
+        android:title="@string/app_name"
+        app:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorToolBar">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/idToolbarMain"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/idButtonCreateNote"
+        android:id="@+id/idRecyclerView">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/button_createNote"
+        android:background="@drawable/button_create_note"
+        android:textColor="#FFF"
+        android:id="@+id/idButtonCreateNote"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

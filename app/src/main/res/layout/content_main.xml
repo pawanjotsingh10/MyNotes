@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/idCardView"
+        android:padding="15dp"
+        android:clickable="true"
+        card_view:cardCornerRadius="3dp"
+        android:elevation="200dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idRelativeLayoutCardView"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTextViewTitleCard"
+            android:text="@string/title"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTextViewContentCard"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:clickable="false"
+            android:text="@string/content"
+            android:layout_below="@id/idTextViewTitleCard"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/idTextViewTagCard"
+                android:text="@string/tag"
+                android:textColor="#000"
+                android:padding="5dp"
+                android:layout_below="@+id/idTextViewContentCard"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_stamp"
+                android:padding="5dp"
+                android:id="@+id/idTextViewLastModified"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"/>
+
+            <ImageButton
+                android:id="@+id/idImageButtonMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:contentDescription="@string/contentDescription_moreVertical_imageViewButton"
+                android:src="@mipmap/ic_more_vert_black_24dp"
+                android:layout_alignParentEnd="true"
+                android:background="@null"/>
+
+</RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

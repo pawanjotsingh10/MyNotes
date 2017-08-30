@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Notes</string>
+    <string name="title_activity_main2_insert">Main2InsertActivity</string>
+    <string name="title_activity_insert">InsertActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="search_hint">Search Tags</string>
+    <string name="long_label">NoteDetailsActivity</string>
+    <string name="short_label">Details</string>
+    <string name="time_stamp">Time stamp</string>
+    <string name="tag">#TAG</string>
+    <string name="content">This is where content goes</string>
+    <string name="title">Title</string>
+    <string name="contentDescription_moreVertical_imageViewButton">Options for specific note</string>
+    <string name="colors">Colors :</string>
+    <string name="button_createNote">Create Note</string>
+    <string name="contentDescription_done_imagViewButton">Save button</string>
+    <string name="detete">Delete</string>
+    <string name="share">Share</string>
+
+
+
+</resources>
